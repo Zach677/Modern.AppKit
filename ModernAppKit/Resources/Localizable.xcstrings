@@ -1,0 +1,114 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "About %@" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "About %@" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "关于 %@" } }
+      }
+    },
+    "Bring All to Front" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Bring All to Front" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "前置全部窗口" } }
+      }
+    },
+    "Copy" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Copy" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "拷贝" } }
+      }
+    },
+    "Cut" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cut" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "剪切" } }
+      }
+    },
+    "Edit" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Edit" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "编辑" } }
+      }
+    },
+    "Hide %@" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Hide %@" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "隐藏 %@" } }
+      }
+    },
+    "Hide Others" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Hide Others" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "隐藏其他" } }
+      }
+    },
+    "Minimize" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Minimize" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "最小化" } }
+      }
+    },
+    "Paste" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Paste" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "粘贴" } }
+      }
+    },
+    "Programmatic AppKit starter is ready." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Programmatic AppKit starter is ready." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "纯代码 AppKit 起步模板已就绪。" } }
+      }
+    },
+    "Quit %@" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Quit %@" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "退出 %@" } }
+      }
+    },
+    "Redo" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Redo" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "重做" } }
+      }
+    },
+    "Select All" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Select All" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "全选" } }
+      }
+    },
+    "Services" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Services" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "服务" } }
+      }
+    },
+    "Show All" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Show All" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "全部显示" } }
+      }
+    },
+    "Undo" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Undo" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "撤销" } }
+      }
+    },
+    "Window" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Window" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "窗口" } }
+      }
+    },
+    "Zoom" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Zoom" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "缩放" } }
+      }
+    }
+  },
+  "version" : "1.0"
+}

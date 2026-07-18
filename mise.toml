@@ -1,0 +1,70 @@
+# ModernAppKit task automation.
+
+[task_config]
+dir = "{{config_root}}"
+
+[tasks.default]
+description = "Build the macOS app"
+run = [{ task = "build-macos" }]
+
+[tasks.build]
+description = "Alias for build-macos"
+run = [{ task = "build-macos" }]
+
+[tasks.build-macos]
+description = "Build the macOS app"
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+for arg in "$@"; do case "$arg" in *=*) export "$arg" ;; *) echo "Unexpected argument: $arg" >&2; exit 64 ;; esac; done
+XCBUILD_LABEL=build-macos ./Resources/DevKit/scripts/run_xcodebuild.sh \
+    -workspace "${WORKSPACE:-ModernAppKit.xcworkspace}" \
+    -scheme "${SCHEME:-ModernAppKit}" \
+    -configuration "${CONFIGURATION:-Debug}" \
+    -destination "${DESTINATION:-platform=macOS,arch=$(uname -m)}" \
+    CODE_SIGN_STYLE=Manual \
+    CODE_SIGN_IDENTITY=- \
+    CODE_SIGNING_REQUIRED=NO \
+    build
+'''
+
+[tasks.test]
+description = "Alias for test-unit"
+run = [{ task = "test-unit" }]
+
+[tasks.test-unit]
+description = "Run the hosted unit tests"
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+for arg in "$@"; do case "$arg" in *=*) export "$arg" ;; *) echo "Unexpected argument: $arg" >&2; exit 64 ;; esac; done
+XCBUILD_LABEL=test-unit ./Resources/DevKit/scripts/run_xcodebuild.sh \
+    -workspace "${WORKSPACE:-ModernAppKit.xcworkspace}" \
+    -scheme "${SCHEME:-ModernAppKit}" \
+    -configuration "${CONFIGURATION:-Debug}" \
+    -destination "${DESTINATION:-platform=macOS,arch=$(uname -m)}" \
+    CODE_SIGN_STYLE=Manual \
+    CODE_SIGN_IDENTITY=- \
+    CODE_SIGNING_REQUIRED=NO \
+    test
+'''
+
+[tasks.run]
+description = "Alias for run-macos"
+run = [{ task = "run-macos" }]
+
+[tasks.run-macos]
+description = "Build and launch the macOS app"
+run = "./script/build_and_run.sh"
+
+[tasks.format]
+description = "Format Swift source"
+run = "swiftformat . --swift-version 6.0 --exclude .DerivedData"
+
+[tasks.format-lint]
+description = "Check Swift formatting"
+run = "swiftformat . --swift-version 6.0 --exclude .DerivedData --lint"
+
+[tasks.clean]
+description = "Remove generated build output"
+run = "rm -rf .DerivedData"
