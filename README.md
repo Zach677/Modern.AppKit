@@ -30,11 +30,13 @@ mise format-lint
 
 Local signing and bundle overrides belong in the ignored `Configuration/Developer*.xcconfig` files.
 
+GitHub Actions runs `mise build`, `mise test`, and `mise format-lint` on pushes and pull requests.
+
 ## Requirements
 
 - Xcode 16 or later with the macOS 15 SDK
-- `mise`
-- `swiftformat` and optionally `xcbeautify`
+- `mise` (`mise install` provisions the pinned SwiftFormat tool)
+- `xcbeautify` (optional)
 
 ## License
 

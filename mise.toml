@@ -3,6 +3,9 @@
 [task_config]
 dir = "{{config_root}}"
 
+[tools]
+swiftformat = "0.62.1"
+
 [tasks.default]
 description = "Build the macOS app"
 run = [{ task = "build-macos" }]

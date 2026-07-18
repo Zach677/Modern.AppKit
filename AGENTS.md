@@ -14,6 +14,7 @@
 - `ModernAppKit.xcworkspace/` is the default Xcode entrypoint.
 - `Configuration/` owns shared signing, bundle, and version settings.
 - `ModernAppKitTests/` contains hosted Swift Testing tests.
+- `.github/workflows/ci.yml` runs the starter verification gate on pushes and pull requests.
 - `Resources/DevKit/scripts/` contains reusable build tooling.
 - `script/build_and_run.sh` is the stable kill, build, and launch entrypoint behind `mise run` and the Codex Run action.
 
@@ -72,6 +73,7 @@
 - Do not invoke `xcodebuild` directly when a mise task covers the operation.
 - Treat the full log as the source of truth; a zero exit code alone is insufficient.
 - Run `mise format-lint` before handoff.
+- Keep CI limited to `mise build`, `mise test`, and `mise format-lint` unless the repository contract expands.
 - `mise run` must launch the foreground `.app` bundle, not the raw executable.
 
 ## Documentation Sync
