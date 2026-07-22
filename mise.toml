@@ -52,6 +52,10 @@ XCBUILD_LABEL=test-unit ./Resources/DevKit/scripts/run_xcodebuild.sh \
     test
 '''
 
+[tasks.test-tooling]
+description = "Run the appkit-starter Python unit tests"
+run = "python3 -m unittest discover -s skills/appkit-starter/tests"
+
 [tasks.run]
 description = "Alias for run-macos"
 run = [{ task = "run-macos" }]

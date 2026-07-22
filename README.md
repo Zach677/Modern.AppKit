@@ -2,24 +2,35 @@
 
 > Agent-native, programmatic AppKit starter for ordinary macOS window apps.
 
-Modern.AppKit provides the smallest production-shaped AppKit baseline: a native Xcode workspace, explicit application lifecycle, one standard window, a programmatic menu bar, dependency injection, hosted Swift Testing, and `mise` build automation.
+## Create a Project
 
-## Starter Contract
+Install the skill for Codex, Claude Code, or another skill-aware Agent:
 
-- Pure AppKit. SwiftUI is not linked by default.
-- `main.swift` starts `NSApplication` on the main actor.
-- `AppDelegate` owns the first `NSWindow` and terminates after it closes.
-- `RootViewController` owns the initial programmatic view hierarchy.
-- App, Edit, and Window menus are created in code.
-- `AppPreferences` is the starter-level configuration surface.
-- The app sandbox is enabled; hardened runtime is configured for properly signed builds.
-- macOS 15.0 and Swift 6.0 are the default targets.
+```bash
+npx skills add Zach677/Modern.AppKit --skill appkit-starter -g -y
+```
 
-`NSWindowController` is intentionally absent. Add it when a window must be recreated, reopened after closing, or coordinated alongside another window.
+Then ask the Agent to use `$appkit-starter`:
 
-## Workflow
+- `Use $appkit-starter to create a new private AppKit app repo named ShelfMac.`
+- `Use $appkit-starter to create an AppKit app named ShelfMac with the display name Shelf Mac.`
 
-Open `ModernAppKit.xcworkspace` in Xcode, or use:
+The skill creates fresh repositories only. Existing-repository adoption, SwiftUI migration, menu-bar apps, and multi-window architecture are outside its current scope.
+
+## Starter
+
+- Pure AppKit with `main.swift`, `AppDelegate`, `NSWindow`, and `RootViewController`.
+- One standard window and a programmatic App, Edit, and Window menu bar.
+- An Xcode workspace, shared test plan, and hosted Swift Testing target.
+- `AppPreferences` for starter-level configuration.
+- App sandbox and hardened runtime settings.
+- macOS 15.0 and Swift 6.0 defaults.
+
+`NSWindowController` is intentionally absent. Add it when the app must recreate, reopen, or coordinate windows.
+
+## Development
+
+Open `ModernAppKit.xcworkspace`, or use:
 
 ```bash
 mise build
@@ -28,16 +39,17 @@ mise run
 mise format-lint
 ```
 
-Local signing and bundle overrides belong in the ignored `Configuration/Developer*.xcconfig` files.
+Run `mise test-tooling` after changing `skills/appkit-starter`. CI runs the build, app tests, tooling tests, and formatting gate.
 
-GitHub Actions runs `mise build`, `mise test`, and `mise format-lint` on pushes and pull requests.
+Local signing and bundle overrides belong in the ignored `Configuration/Developer*.xcconfig` files.
 
 ## Requirements
 
 - Xcode 16 or later with the macOS 15 SDK
-- `mise` (`mise install` provisions the pinned SwiftFormat tool)
+- `mise`
+- Node.js with `npx`, plus GitHub CLI (`gh`) for skill-driven project creation
 - `xcbeautify` (optional)
 
 ## License
 
-Modern.AppKit is licensed under the MIT License. See `LICENSE`.
+Modern.AppKit is licensed under the MIT License. See [LICENSE](LICENSE).

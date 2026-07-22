@@ -76,6 +76,16 @@
 - Keep CI limited to `mise build`, `mise test`, and `mise format-lint` unless the repository contract expands.
 - `mise run` must launch the foreground `.app` bundle, not the raw executable.
 
+## AppKit Starter Skill
+
+- `skills/appkit-starter/` contains the Agent-facing workflow, deterministic backend, and tooling tests. Generated app repositories must not keep this template-only directory.
+- Run `mise test-tooling` after changing the skill. Template CI runs it in addition to the generated app's build, test, and formatting gates.
+- Keep `appkit-starter` fresh-create only. Do not add existing-repository adoption until a real AppKit repository requires it.
+- Use `Zach677/Modern.AppKit` as the default GitHub template and stop when the target repository or local destination already exists.
+- Preserve the generated app's ordinary single-window lifecycle, programmatic menus, bundle identity, team-neutral signing, workspace, test plan, and mise workflow.
+- Keep backend input validation and temporary-clone verification ahead of GitHub repository creation. Generated repositories must remove template-only skill files and all `ModernAppKit`, `Modern.AppKit`, and `modern-appkit` identities outside Git metadata.
+- Do not add SwiftUI, `NSWindowController`, multi-window, menu-bar, packaging, release, or adoption behavior to this first slice.
+
 ## Documentation Sync
 
 - Update this file and `README.md` when the lifecycle, structure, or workflow contract changes.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "AppKit Starter"
+  short_description: "Create programmatic AppKit macOS apps"
+  default_prompt: "Use $appkit-starter to create a programmatic AppKit macOS app from Modern.AppKit."
